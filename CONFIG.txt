@@ -1,3 +1,258 @@
 hello welcome
 goodmorning
 leo
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\User\Desktop\DevOps> git init
+Initialized empty Git repository in C:/Users/User/Desktop/DevOps/.git/
+PS C:\Users\User\Desktop\DevOps> git branch -m main
+PS C:\Users\User\Desktop\DevOps> git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        CONFIG.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\User\Desktop\DevOps> git add .
+PS C:\Users\User\Desktop\DevOps> git commit -m "commited"
+[main (root-commit) de10565] commited
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 CONFIG.txt
+PS C:\Users\User\Desktop\DevOps> git status
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\User\Desktop\DevOps> git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   CONFIG.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\User\Desktop\DevOps> git add .
+PS C:\Users\User\Desktop\DevOps> git commit -m "v1 commited"
+[main 70cfea2] v1 commited
+ 1 file changed, 1 insertion(+)
+PS C:\Users\User\Desktop\DevOps> git status
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\User\Desktop\DevOps> git log --all --graph
+* commit 70cfea29059e5e251a34620aab89d8702c53aae8 (HEAD -> main)
+| Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+| Date:   Mon Jan 5 15:40:20 2026 +0530
+|
+|     v1 commited
+|
+* commit de105655c1fb6e787ffe6a68c62932e3be4e2069
+  Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+  Date:   Mon Jan 5 15:39:20 2026 +0530
+
+      commited
+PS C:\Users\User\Desktop\DevOps> git branch new-branch
+PS C:\Users\User\Desktop\DevOps> git log --all --graph
+* commit 70cfea29059e5e251a34620aab89d8702c53aae8 (HEAD -> main, new-branch)
+| Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+| Date:   Mon Jan 5 15:40:20 2026 +0530
+|
+|     v1 commited
+|
+* commit de105655c1fb6e787ffe6a68c62932e3be4e2069
+  Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+  Date:   Mon Jan 5 15:39:20 2026 +0530
+
+      commited
+PS C:\Users\User\Desktop\DevOps> git branch bv1 de105655c1fb6e787ffe6a68c62932e3be4e2069
+PS C:\Users\User\Desktop\DevOps> git log --all --graph
+* commit 70cfea29059e5e251a34620aab89d8702c53aae8 (HEAD -> main, new-branch)
+| Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+| Date:   Mon Jan 5 15:40:20 2026 +0530
+|
+|     v1 commited
+|
+* commit de105655c1fb6e787ffe6a68c62932e3be4e2069 (bv1)
+  Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+  Date:   Mon Jan 5 15:39:20 2026 +0530
+
+      commited
+PS C:\Users\User\Desktop\DevOps> git checkout main
+Already on 'main'
+PS C:\Users\User\Desktop\DevOps> git checkout bv1
+error: Your local changes to the following files would be overwritten by checkout:
+        CONFIG.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+PS C:\Users\User\Desktop\DevOps> git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   CONFIG.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\User\Desktop\DevOps> git add .
+PS C:\Users\User\Desktop\DevOps> git commit -m "v2 commited"
+[main 8dcaed4] v2 commited
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\Users\User\Desktop\DevOps> git log --all --graph
+* commit 8dcaed404dbd1f12b295402f2cc320ffdd074374 (HEAD -> main)
+| Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+| Date:   Mon Jan 5 15:44:31 2026 +0530
+|
+|     v2 commited
+|
+* commit 70cfea29059e5e251a34620aab89d8702c53aae8 (new-branch)
+| Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+| Date:   Mon Jan 5 15:40:20 2026 +0530
+|
+|     v1 commited
+|
+* commit de105655c1fb6e787ffe6a68c62932e3be4e2069 (bv1)
+  Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+  Date:   Mon Jan 5 15:39:20 2026 +0530
+
+      commited
+PS C:\Users\User\Desktop\DevOps> git status new-branch
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\User\Desktop\DevOps> git status bv1
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\User\Desktop\DevOps> git checkout bv1
+Switched to branch 'bv1'
+PS C:\Users\User\Desktop\DevOps> checkout new-branch
+checkout : The term 'checkout' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ checkout new-branch
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (checkout:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\User\Desktop\DevOps> git checkout new-branch
+Switched to branch 'new-branch'
+PS C:\Users\User\Desktop\DevOps> git checkout main
+Switched to branch 'main'
+PS C:\Users\User\Desktop\DevOps> git log --all --graph
+* commit 8dcaed404dbd1f12b295402f2cc320ffdd074374 (HEAD -> main)
+| Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+| Date:   Mon Jan 5 15:44:31 2026 +0530
+|
+|     v2 commited
+|
+* commit 70cfea29059e5e251a34620aab89d8702c53aae8 (new-branch)
+| Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+| Date:   Mon Jan 5 15:40:20 2026 +0530
+|
+|     v1 commited
+|
+* commit de105655c1fb6e787ffe6a68c62932e3be4e2069 (bv1)
+  Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+  Date:   Mon Jan 5 15:39:20 2026 +0530
+
+      commited
+PS C:\Users\User\Desktop\DevOps> git branch
+  bv1
+* main
+  new-branch
+PS C:\Users\User\Desktop\DevOps> git branch neww
+PS C:\Users\User\Desktop\DevOps> git branch
+  bv1
+* main
+  new-branch
+  neww
+PS C:\Users\User\Desktop\DevOps> git checkout neww
+Switched to branch 'neww'
+PS C:\Users\User\Desktop\DevOps> git branch
+  bv1
+  main
+  new-branch
+* neww
+PS C:\Users\User\Desktop\DevOps> git add .
+PS C:\Users\User\Desktop\DevOps> git add .
+PS C:\Users\User\Desktop\DevOps> git commit -m "v3 commited"
+[neww 2b0afec] v3 commited
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\Users\User\Desktop\DevOps> git log -all --graph
+error: switch `l' expects an integer value with an optional k/m/g suffix
+PS C:\Users\User\Desktop\DevOps> git log --all --graph
+* commit 2b0afec04a1d1e4ec613ea329c75d69278f29732 (HEAD -> neww)
+| Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+| Date:   Mon Jan 5 15:53:05 2026 +0530
+|
+|     v3 commited
+|
+* commit 8dcaed404dbd1f12b295402f2cc320ffdd074374 (main)
+| Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+| Date:   Mon Jan 5 15:44:31 2026 +0530
+|
+|     v2 commited
+|
+* commit 70cfea29059e5e251a34620aab89d8702c53aae8 (new-branch)
+| Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+| Date:   Mon Jan 5 15:40:20 2026 +0530
+|
+|     v1 commited
+|
+* commit de105655c1fb6e787ffe6a68c62932e3be4e2069 (bv1)
+  Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+  Date:   Mon Jan 5 15:39:20 2026 +0530
+
+      commited
+PS C:\Users\User\Desktop\DevOps> git checkout main
+Switched to branch 'main'
+PS C:\Users\User\Desktop\DevOps> git merge new_branch
+merge: new_branch - not something we can merge
+PS C:\Users\User\Desktop\DevOps> git merge new-branch
+Already up to date.
+PS C:\Users\User\Desktop\DevOps> git show
+commit 8dcaed404dbd1f12b295402f2cc320ffdd074374 (HEAD -> main)
+Author: Leo-Emmanuel <leoemmanuel2004@gmail.com>
+Date:   Mon Jan 5 15:44:31 2026 +0530
+
+    v2 commited
+
+diff --git a/CONFIG.txt b/CONFIG.txt
+index d48a8b1..4fd010a 100644
+--- a/CONFIG.txt
++++ b/CONFIG.txt
+@@ -1 +1,2 @@
+-hello welcome
+\ No newline at end of file
++hello welcome
++goodmorning
+\ No newline at end of file
+PS C:\Users\User\Desktop\DevOps> git merge bv1
+Already up to date.
+PS C:\Users\User\Desktop\DevOps> git remote add origin git@github.com:Leo-Emmanuel/DevOps.git
+PS C:\Users\User\Desktop\DevOps> git push -u origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (9/9), 676 bytes | 225.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Leo-Emmanuel/DevOps.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\User\Desktop\DevOps> git merge neww
+Updating 8dcaed4..2b0afec
+Fast-forward
+ CONFIG.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS C:\Users\User\Desktop\DevOps> git remote add origin git@github.com:Leo-Emmanuel/DevOps.git
+error: remote origin already exists.
+PS C:\Users\User\Desktop\DevOps> git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 276 bytes | 276.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:Leo-Emmanuel/DevOps.git
+   8dcaed4..2b0afec  main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\User\Desktop\DevOps>
